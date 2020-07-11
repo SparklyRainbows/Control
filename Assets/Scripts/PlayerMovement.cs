@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour {
             moves.LowerLeftMove();
         }
 
-            if (Input.GetButtonDown("Jump") && moves.getJumps() > 0) {
+        if (Input.GetButtonDown("Jump") && moves.getJumps() > 0) {
             jump = true;
             moves.LowerJumps();
 
