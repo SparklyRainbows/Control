@@ -12,17 +12,20 @@ public class MovementManager : MonoBehaviour
     private int RightMove;
     [SerializeField]
     private int Jumps;
-    [SerializeField]
+    
     private Canvas Movement;
     #endregion
 
     #region Unity_funcs
 
-   
+    private void Awake()
+    {
+        Movement = GameObject.FindGameObjectWithTag("MoveSet").GetComponent<Canvas>();
+       
+    }
     private void Update()
     {
-        TextMeshProUGUI[] Holders =  Movement.GetComponentsInChildren<TextMeshProUGUI>();
-        
+        TextMeshProUGUI[] Holders = Movement.GetComponentsInChildren<TextMeshProUGUI>();
         Holders[0].text = LeftMove.ToString();
         Holders[1].text = RightMove.ToString();
         Holders[2].text = Jumps.ToString();
