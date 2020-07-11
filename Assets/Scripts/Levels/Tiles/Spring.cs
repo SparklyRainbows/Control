@@ -13,6 +13,8 @@ public class Spring : MonoBehaviour
     }
 
     private void Bounce(GameObject player) {
-        player.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * bounceAmount);
+        if (player.GetComponent<CharacterController2D>().IsGrounded()) {
+            player.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * bounceAmount);
+        }
     }
 }
