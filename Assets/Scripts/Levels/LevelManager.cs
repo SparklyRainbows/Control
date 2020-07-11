@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -27,8 +27,8 @@ public class LevelManager : MonoBehaviour
     }
 
     private void LoadLevel(int num) {
+        GameObject.FindGameObjectWithTag("MoveSet").GetComponent<UI>().HideGameOver();
 
-        
         if (currentLevel != null) {
             Destroy(currentLevel);
         }
