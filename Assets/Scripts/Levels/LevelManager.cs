@@ -9,8 +9,7 @@ public class LevelManager : MonoBehaviour
     public Animator animator;
     public List<GameObject> levelPrefabs;
     private GameObject currentLevel;
-    [SerializeField]
-    private Canvas C;
+    
 
     private void Start() {
         LoadLevel(level);
