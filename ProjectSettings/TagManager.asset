@@ -10,6 +10,7 @@ TagManager:
   - Pickup
   - ConveyorBelt
   - MovingPlat
+  - Slope
   layers:
   - Default
   - TransparentFX

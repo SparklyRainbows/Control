@@ -12,7 +12,9 @@ public class MovementManager : MonoBehaviour
     private int RightMove;
     [SerializeField]
     private int Jumps;
-    
+
+    private PlayerInteract interactions;
+
     private Canvas Movement;
     #endregion
 
@@ -20,6 +22,7 @@ public class MovementManager : MonoBehaviour
 
     private void Awake()
     {
+        interactions = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteract>();
         Movement = GameObject.FindGameObjectWithTag("MoveSet").GetComponent<Canvas>();
        
     }
