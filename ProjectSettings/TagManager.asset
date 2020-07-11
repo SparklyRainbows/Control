@@ -11,6 +11,7 @@ TagManager:
   - ConveyorBelt
   - MovingPlat
   - Slope
+  - Fade
   layers:
   - Default
   - TransparentFX

@@ -6,14 +6,13 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public int level;
-
+    public Animator animator;
     public List<GameObject> levelPrefabs;
     private GameObject currentLevel;
-
-    private UI ui;
+    [SerializeField]
+    private Canvas C;
 
     private void Start() {
-        ui = GameObject.FindGameObjectWithTag("MoveSet").GetComponent<UI>();
         LoadLevel(level);
     }
 
@@ -24,12 +23,13 @@ public class LevelManager : MonoBehaviour
     }
 
     public void LoadNextLevel() {
+        animator.SetTrigger("fade_out");
         LoadLevel(level + 1);
     }
 
     private void LoadLevel(int num) {
-        ui.HideGameOver();
 
+        
         if (currentLevel != null) {
             Destroy(currentLevel);
         }
