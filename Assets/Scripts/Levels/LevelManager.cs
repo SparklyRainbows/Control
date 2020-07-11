@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     private GameObject currentLevel;
 
     private void Start() {
-        LoadLevel(0);
+        LoadLevel(level);
     }
 
     public void Update() {

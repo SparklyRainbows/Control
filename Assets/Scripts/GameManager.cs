@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     #region Scene
     public void Play() {
-        SceneManager.LoadScene("JasmineScene");
+        SceneManager.LoadScene("Levels");
     }
 
     public void Quit() {
