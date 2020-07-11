@@ -46,3 +46,4 @@ MonoBehaviour:
   level: 1
   levelPrefabs:
   - {fileID: 90954627456351, guid: b49c91964091c044c814ef771075acc9, type: 3}
+  - {fileID: 90954627456351, guid: 6297df4c81dfee5478a42388d6952be4, type: 3}

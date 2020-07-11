@@ -29,7 +29,6 @@ public class LevelManager : MonoBehaviour
             return;
         }
 
-        currentLevel = levelPrefabs[level - 1];
-        Instantiate(currentLevel);
+        currentLevel = Instantiate(levelPrefabs[level - 1]);
     }
 }
