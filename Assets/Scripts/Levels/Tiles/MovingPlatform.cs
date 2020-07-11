@@ -101,7 +101,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            lastparent = collision.transform.parent.gameObject;
+            
             collision.transform.parent = this.transform.parent;
         }
     }
@@ -110,7 +110,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.transform.parent =lastparent.transform;
+            collision.transform.parent =this.transform.parent.transform.parent.transform.parent.transform.parent;
         }
     }
 
