@@ -8,11 +8,10 @@ public class LevelManager : MonoBehaviour
 
     public List<GameObject> levelPrefabs;
     private GameObject currentLevel;
-
-    private UI ui;
+    [SerializeField]
+    private Canvas C;
 
     private void Start() {
-        ui = GameObject.FindGameObjectWithTag("MoveSet").GetComponent<UI>();
         LoadLevel(level);
     }
 
@@ -23,12 +22,12 @@ public class LevelManager : MonoBehaviour
     }
 
     public void LoadNextLevel() {
+        
         LoadLevel(level + 1);
     }
 
     private void LoadLevel(int num) {
-        ui.HideGameOver();
-
+        C.GetComponent<>
         if (currentLevel != null) {
             Destroy(currentLevel);
         }
