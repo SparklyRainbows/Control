@@ -20,6 +20,7 @@ public class MovingPlatform : MonoBehaviour
     public bool is_activated;
     private bool started;
     private bool moving;
+    private GameObject lastparent;
     #endregion
 
     #region Unity_funcs
@@ -100,6 +101,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            
             collision.transform.parent = this.transform.parent;
         }
     }
@@ -108,7 +110,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.transform.parent =null;
+            collision.transform.parent =this.transform.parent.transform.parent.transform.parent.transform.parent;
         }
     }
 

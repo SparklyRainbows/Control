@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,13 +9,9 @@ public class LevelManager : MonoBehaviour
     public Animator animator;
     public List<GameObject> levelPrefabs;
     private GameObject currentLevel;
-    [SerializeField]
-    private Canvas C;
-
-    private UI ui;
+    
 
     private void Start() {
-        ui = GameObject.FindGameObjectWithTag("MoveSet").GetComponent<UI>();
         LoadLevel(level);
     }
 
@@ -31,7 +27,7 @@ public class LevelManager : MonoBehaviour
     }
 
     private void LoadLevel(int num) {
-        ui.HideGameOver();
+        //GameObject.FindGameObjectWithTag("MoveSet").GetComponent<UI>().HideGameOver();
 
         if (currentLevel != null) {
             Destroy(currentLevel);
