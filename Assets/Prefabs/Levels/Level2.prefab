@@ -987,6 +987,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4861326367913161334, guid: 1181384eb59e56347a9e17260a91756f,
+        type: 3}
+      propertyPath: Speed
+      value: -40
+      objectReference: {fileID: 0}
     - target: {fileID: 4861326367913161335, guid: 1181384eb59e56347a9e17260a91756f,
         type: 3}
       propertyPath: m_Name
@@ -1212,6 +1217,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4861326367913161334, guid: 1181384eb59e56347a9e17260a91756f,
+        type: 3}
+      propertyPath: Speed
+      value: -40
+      objectReference: {fileID: 0}
     - target: {fileID: 4861326367913161335, guid: 1181384eb59e56347a9e17260a91756f,
         type: 3}
       propertyPath: m_Name
@@ -1286,6 +1296,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861326367913161334, guid: 1181384eb59e56347a9e17260a91756f,
+        type: 3}
+      propertyPath: Speed
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 4861326367913161335, guid: 1181384eb59e56347a9e17260a91756f,
         type: 3}
@@ -1362,6 +1377,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4861326367913161334, guid: 1181384eb59e56347a9e17260a91756f,
+        type: 3}
+      propertyPath: Speed
+      value: -40
+      objectReference: {fileID: 0}
     - target: {fileID: 4861326367913161335, guid: 1181384eb59e56347a9e17260a91756f,
         type: 3}
       propertyPath: m_Name
@@ -1436,6 +1456,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861326367913161334, guid: 1181384eb59e56347a9e17260a91756f,
+        type: 3}
+      propertyPath: Speed
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 4861326367913161335, guid: 1181384eb59e56347a9e17260a91756f,
         type: 3}
