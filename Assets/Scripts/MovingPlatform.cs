@@ -25,7 +25,7 @@ public class MovingPlatform : MonoBehaviour
     #region Unity_funcs
     private void Awake()
     {
-        startPos = transform.position;
+        startPos = transform.parent.transform.position;
         if (!is_activated)
         {
             moving = true;
