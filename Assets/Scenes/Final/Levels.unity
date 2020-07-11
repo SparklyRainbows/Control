@@ -192,10 +192,14 @@ PrefabInstance:
         type: 3}
       propertyPath: level
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 0
 =======
       value: 2
 >>>>>>> 5511670fc707e6cec7677b22db66e03b991cc001
+=======
+      value: 4
+>>>>>>> 3b495d4a7964b00551573924564925498ac0b91f
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae7364cafd168c64f81de0634612179d, type: 3}
