@@ -10,11 +10,10 @@ public class PlayerMovement : MonoBehaviour {
     private bool jump;
     [SerializeField]
     private MovementManager moves;
-    private float Lastmove;
 
     private void Awake() {
         controller = GetComponent<CharacterController2D>();
-        Lastmove = 0;
+        
     }
 
     private void Update() {

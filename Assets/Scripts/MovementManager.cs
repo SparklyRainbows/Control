@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MovementManager : MonoBehaviour
 {
@@ -11,6 +12,22 @@ public class MovementManager : MonoBehaviour
     private int RightMove;
     [SerializeField]
     private int Jumps;
+    [SerializeField]
+    private Canvas Movement;
+    #endregion
+
+    #region Unity_funcs
+    
+
+    private void Update()
+    {
+        TextMeshProUGUI[] Holders =  Movement.GetComponentsInChildren<TextMeshProUGUI>();
+        
+        Holders[0].text = LeftMove.ToString();
+        Holders[1].text = RightMove.ToString();
+        Holders[2].text = Jumps.ToString();
+    }
+
     #endregion
 
     #region getters
@@ -49,4 +66,5 @@ public class MovementManager : MonoBehaviour
         Debug.Log("Lowered");
     }
     #endregion
+
 }
