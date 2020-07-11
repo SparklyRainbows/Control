@@ -6,15 +6,27 @@ public class LevelManager : MonoBehaviour
 {
     public int level;
 
+    private LevelGenerator gen;
+
     private void Start() {
+        gen = GetComponent<LevelGenerator>();
         LoadLevel(1);
     }
 
     public void LoadNextLevel() {
-        level++;
+        LoadLevel(level + 1);
     }
 
-    public void LoadLevel(int num) {
+    private void LoadLevel(int num) {
+        DestroyLevel();
+
         level = num;
+        gen.GenerateLevel(level);
+    }
+
+    private void DestroyLevel() {
+        foreach (Transform child in transform) {
+            Destroy(child.gameObject);
+        }
     }
 }
