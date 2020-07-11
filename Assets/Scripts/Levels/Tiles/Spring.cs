@@ -6,15 +6,33 @@ public class Spring : MonoBehaviour
 {
     public float bounceAmount;
 
+    private float cd = .8f;
+
+    private bool canBounce = true;
+
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
-            Bounce(collision.gameObject);
+            StartCoroutine(Bounce(collision.gameObject));
         }
     }
 
-    private void Bounce(GameObject player) {
-        if (player.GetComponent<CharacterController2D>().IsGrounded()) {
-            player.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * bounceAmount);
+    private IEnumerator Bounce(GameObject player) {
+        if (canBounce && Above(player)) {
+            canBounce = false;
+
+            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            Vector2 vel = rb.velocity;
+            vel.y = bounceAmount;
+            //rb.AddRelativeForce(Vector2.up * bounceAmount);
+            rb.velocity = vel;
+
+            yield return new WaitForSeconds(cd);
+
+            canBounce = true;
         }
+    }
+
+    private bool Above(GameObject player) {
+        return player.transform.position.y > transform.position.y;
     }
 }
