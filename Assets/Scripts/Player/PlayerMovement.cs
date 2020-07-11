@@ -13,32 +13,26 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Awake() {
         controller = GetComponent<CharacterController2D>();
-        
+
     }
 
     private void Update() {
         float x_input = Input.GetAxisRaw("Horizontal");
 
-        if (x_input < 0 && moves.getLeftMove() > 0)
-        {
+        if (x_input < 0 && moves.getLeftMove() > 0) {
             horizontalMove = x_input * runSpeed;
-            
 
-        } else if (x_input > 0 && moves.getRightMove() > 0)
-        {
+
+        } else if (x_input > 0 && moves.getRightMove() > 0) {
             horizontalMove = x_input * runSpeed;
-        }
-        else
-        {
-            
+        } else {
+
             horizontalMove = 0;
         }
-        if(Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D))
-        {
+        if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D)) {
             moves.LowerRightMove();
         }
-        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A))
-        {
+        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A)) {
             moves.LowerLeftMove();
         }
 

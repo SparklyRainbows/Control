@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour {
 
     public float dampTime = 0.15f;
     private Vector3 velocity = Vector3.zero;
-    public Transform target;
+    private Transform target;
 
     private Camera cam;
 
@@ -15,6 +15,13 @@ public class CameraFollow : MonoBehaviour {
     }
 
     private void Update() {
+        if (!target) {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null) {
+                target = player.transform;
+            }
+        }
+
         if (target) {
             Vector3 point = cam.WorldToViewportPoint(target.position);
             Vector3 targetPos = target.position + new Vector3(0, 1, 0);
