@@ -20,12 +20,25 @@ public class PlayerMovement : MonoBehaviour {
         float x_input = Input.GetAxisRaw("Horizontal");
 
         if (x_input < 0 && moves.getLeftMove() > 0) {
-            horizontalMove = x_input * runSpeed;
-            Debug.Log(horizontalMove);
-
+            if (lateset != 0)
+            {
+                horizontalMove = lateset;
+            }
+            else
+            {
+                horizontalMove = x_input * runSpeed;
+                Debug.Log(horizontalMove);
+            }
 
         } else if (x_input > 0 && moves.getRightMove() > 0) {
-            horizontalMove = x_input * runSpeed;
+            if (lateset != 0)
+            {
+                horizontalMove = lateset;
+            }
+            else
+            {
+                horizontalMove = x_input * runSpeed;
+            }
         } else {
             if (lateset != 0)
             {
