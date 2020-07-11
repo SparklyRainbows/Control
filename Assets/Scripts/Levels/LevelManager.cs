@@ -6,10 +6,10 @@ public class LevelManager : MonoBehaviour
 {
     public int level;
 
-    private LevelGenerator gen;
+    public List<GameObject> levelPrefabs;
+    private GameObject currentLevel;
 
     private void Start() {
-        gen = GetComponent<LevelGenerator>();
         LoadLevel(1);
     }
 
@@ -18,15 +18,18 @@ public class LevelManager : MonoBehaviour
     }
 
     private void LoadLevel(int num) {
-        DestroyLevel();
+        if (currentLevel != null) {
+            Destroy(currentLevel);
+        }
 
         level = num;
-        gen.GenerateLevel(level);
-    }
 
-    private void DestroyLevel() {
-        foreach (Transform child in transform) {
-            Destroy(child.gameObject);
+        if (num > levelPrefabs.Count) {
+            Debug.Log("you win");
+            return;
         }
+
+        currentLevel = levelPrefabs[level - 1];
+        Instantiate(currentLevel);
     }
 }
