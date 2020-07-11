@@ -10,7 +10,13 @@ public class LevelManager : MonoBehaviour
     private GameObject currentLevel;
 
     private void Start() {
-        LoadLevel(1);
+        LoadLevel(0);
+    }
+
+    public void Update() {
+        if (Input.GetKeyDown(KeyCode.R)) {
+            LoadLevel(level);
+        }
     }
 
     public void LoadNextLevel() {
@@ -24,11 +30,11 @@ public class LevelManager : MonoBehaviour
 
         level = num;
 
-        if (num > levelPrefabs.Count) {
+        if (num >= levelPrefabs.Count) {
             Debug.Log("you win");
             return;
         }
 
-        currentLevel = Instantiate(levelPrefabs[level - 1]);
+        currentLevel = Instantiate(levelPrefabs[level]);
     }
 }
