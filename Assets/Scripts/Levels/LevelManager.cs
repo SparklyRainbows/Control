@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class LevelManager : MonoBehaviour
         level = num;
 
         if (num >= levelPrefabs.Count) {
-            Debug.Log("you win");
+            SceneManager.LoadScene("YouWin");
             return;
         }
 

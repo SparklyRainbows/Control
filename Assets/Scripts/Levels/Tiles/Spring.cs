@@ -33,6 +33,6 @@ public class Spring : MonoBehaviour
     }
 
     private bool Above(GameObject player) {
-        return player.transform.position.y > transform.position.y;
+        return player.transform.position.y - 1 > transform.position.y;
     }
 }
