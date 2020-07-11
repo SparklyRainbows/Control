@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 113499084415006170, guid: ae7364cafd168c64f81de0634612179d,
+        type: 3}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae7364cafd168c64f81de0634612179d, type: 3}
 --- !u!1 &519420028
@@ -335,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -423,7 +428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -269.5, y: -137.8}
+  m_AnchoredPosition: {x: -339.48, y: -186.52}
   m_SizeDelta: {x: 121.03076, y: 33.26909}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1016894802
@@ -579,8 +584,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -137.8}
-  m_SizeDelta: {x: 729, y: 33.26544}
+  m_AnchoredPosition: {x: -0.000040054, y: -186.52}
+  m_SizeDelta: {x: 800, y: 33.26544}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1286134113
 MonoBehaviour:
@@ -653,7 +658,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 303.98, y: -137.8}
+  m_AnchoredPosition: {x: 339.48, y: -186.52}
   m_SizeDelta: {x: 121.03076, y: 33.26909}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1406271725
@@ -809,7 +814,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -137.8}
+  m_AnchoredPosition: {x: 0, y: -186.52}
   m_SizeDelta: {x: 121.03076, y: 33.26909}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1938607725

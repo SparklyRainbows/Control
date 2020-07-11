@@ -10,5 +10,8 @@ EditorBuildSettings:
     guid: 90d48ef2abd9b0b47bdb653488f04d2c
   - enabled: 1
     path: Assets/Scenes/Final/Levels.unity
-    guid: 81eced37e04b26740b7d8a985018927a
+    guid: 630c59e7f9b03714f94d132c5d2d6e6c
+  - enabled: 1
+    path: Assets/Scenes/Final/YouWin.unity
+    guid: f3d2c1734db45e04195a50d8a6e2d364
   m_configObjects: {}

@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 1274270617059450642}
   - component: {fileID: 9196790987877795879}
   - component: {fileID: 3731337069080022929}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1847,7 +1847,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 2302402751585307627}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f34ee27db9cb603419d39bffa44f0496, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

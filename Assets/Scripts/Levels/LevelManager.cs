@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -9,7 +10,10 @@ public class LevelManager : MonoBehaviour
     public List<GameObject> levelPrefabs;
     private GameObject currentLevel;
 
+    private UI ui;
+
     private void Start() {
+        ui = GameObject.FindGameObjectWithTag("MoveSet").GetComponent<UI>();
         LoadLevel(level);
     }
 
@@ -24,6 +28,8 @@ public class LevelManager : MonoBehaviour
     }
 
     private void LoadLevel(int num) {
+        ui.HideGameOver();
+
         if (currentLevel != null) {
             Destroy(currentLevel);
         }
@@ -31,7 +37,7 @@ public class LevelManager : MonoBehaviour
         level = num;
 
         if (num >= levelPrefabs.Count) {
-            Debug.Log("you win");
+            SceneManager.LoadScene("YouWin");
             return;
         }
 
