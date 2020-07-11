@@ -55,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -65,11 +65,11 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 12
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -111,7 +111,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: switches_0
+      name: tileset_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,20 +119,20 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3037e25cb41c9d8f0800000000000000
-      internalID: -515168151182347517
+      spriteID: d142805f7dc379e40800000000000000
+      internalID: 5663061954668274717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: switches_1
+      name: tileset_1
       rect:
         serializedVersion: 2
         x: 24
@@ -140,20 +140,20 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88a7aaa60067cb530800000000000000
-      internalID: 3872099523793418888
+      spriteID: 5a7cc076b016f5350800000000000000
+      internalID: 6007627129536956325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: switches_2
+      name: tileset_4
       rect:
         serializedVersion: 2
         x: 0
@@ -161,20 +161,20 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57cb0843a15f33160800000000000000
-      internalID: 7004211338390060149
+      spriteID: 18d22ca5fe98a2db0800000000000000
+      internalID: -4815885190406460031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: switches_3
+      name: tileset_5
       rect:
         serializedVersion: 2
         x: 24
@@ -182,20 +182,20 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 459bfc1c6c5c207b0800000000000000
-      internalID: -5259423957369505452
+      spriteID: 46f7ee94e3e04c760800000000000000
+      internalID: 7477116942032994148
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: switches_4
+      name: tileset_6
       rect:
         serializedVersion: 2
         x: 0
@@ -203,41 +203,20 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0cab628328a4cef0800000000000000
-      internalID: -88761222175151089
+      spriteID: 2e697536ffff08af0800000000000000
+      internalID: -396035294860175646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: switches_5
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e518c2c02712ff440800000000000000
-      internalID: 4971729287354548574
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: switches_6
+      name: tileset_8
       rect:
         serializedVersion: 2
         x: 0
@@ -245,20 +224,62 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 717f2fc8acf85ae60800000000000000
-      internalID: 7972936815440230167
+      spriteID: d7e647f56f8281490800000000000000
+      internalID: -7775419718026629507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: switches_7
+      name: tileset_9
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 24
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87adde22a194825f0800000000000000
+      internalID: -781294158744790408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_10
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 24
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21548a253471cd70800000000000000
+      internalID: 9061651696941551919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_11
       rect:
         serializedVersion: 2
         x: 24
@@ -266,14 +287,14 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 138c524f80d967ac0800000000000000
-      internalID: -3857723369014835151
+      spriteID: 40048ed44c0ef0f90800000000000000
+      internalID: -6985117363303071740
       vertices: []
       indices: 
       edges: []
