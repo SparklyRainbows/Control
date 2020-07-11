@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d738f7abdf87e94883c2fd723a72149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
+  level: 0
   levelPrefabs:
   - {fileID: 90954627456351, guid: b49c91964091c044c814ef771075acc9, type: 3}
   - {fileID: 90954627456351, guid: 6297df4c81dfee5478a42388d6952be4, type: 3}
