@@ -12,6 +12,12 @@ public class ConveyorBelt : MonoBehaviour
     [SerializeField]
     private bool stoppable;
 
+    private Animator animator;
+
+    private void Start() {
+        animator = GetComponent<Animator>();
+    }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && !stop)

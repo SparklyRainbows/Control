@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 407ae87d99390c148a91141eae77b0ce
+guid: 6d55f68ad9fd4c644977b4b985ced3b7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9143868440440847147
-    second: gear_0
+      213: -3122119905901174435
+    second: conveyorbelt_0
   - first:
-      213: -6116311029358466808
-    second: gear_1
+      213: 3487266805396788684
+    second: conveyorbelt_1
   - first:
-      213: 7468278412319249001
-    second: gear_2
-  - first:
-      213: -4710488717584078819
-    second: gear_3
+      213: -6144435487258871343
+    second: conveyorbelt_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -99,55 +96,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gear_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2bb16976eb85ee70800000000000000
-      internalID: 9143868440440847147
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gear_1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 809e84f368f7e1ba0800000000000000
-      internalID: -6116311029358466808
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gear_2
+      name: conveyorbelt_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +110,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 962d10ab5a7a4a760800000000000000
-      internalID: 7468278412319249001
+      spriteID: d51a59ebc700ca4d0800000000000000
+      internalID: -3122119905901174435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gear_3
+      name: conveyorbelt_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 24
         y: 0
-        width: 48
-        height: 48
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,8 +131,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d186ae5f77bf0aeb0800000000000000
-      internalID: -4710488717584078819
+      spriteID: cc5dfa4eea2456030800000000000000
+      internalID: 3487266805396788684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: conveyorbelt_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d971ac9a749abaa0800000000000000
+      internalID: -6144435487258871343
       vertices: []
       indices: 
       edges: []
