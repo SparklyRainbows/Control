@@ -1369,6 +1369,36 @@ PrefabInstance:
       propertyPath: Jumps
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5940584607331152378, guid: 13bf64859ec6ea34d9d03682867dbc9b,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940584607331152378, guid: 13bf64859ec6ea34d9d03682867dbc9b,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940584607331152378, guid: 13bf64859ec6ea34d9d03682867dbc9b,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940584607331152378, guid: 13bf64859ec6ea34d9d03682867dbc9b,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940584607331152378, guid: 13bf64859ec6ea34d9d03682867dbc9b,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940584607331152378, guid: 13bf64859ec6ea34d9d03682867dbc9b,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13bf64859ec6ea34d9d03682867dbc9b, type: 3}
 --- !u!4 &5940635488666490513 stripped
