@@ -6,6 +6,8 @@ TagManager:
   tags:
   - LevelManager
   - MoveSet
+  - Switch
+  - Pickup
   layers:
   - Default
   - TransparentFX

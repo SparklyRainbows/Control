@@ -70,4 +70,9 @@ public class MovementManager : MonoBehaviour
     }
     #endregion
 
+    public void Gain(int left, int right, int jump) {
+        LeftMove += left;
+        RightMove += right;
+        Jumps += jump;
+    }
 }
