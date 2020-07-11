@@ -21,12 +21,13 @@ public class PlayerMovement : MonoBehaviour {
 
         if (x_input < 0 && moves.getLeftMove() > 0) {
             horizontalMove = x_input * runSpeed;
+            Debug.Log(horizontalMove);
 
 
         } else if (x_input > 0 && moves.getRightMove() > 0) {
             horizontalMove = x_input * runSpeed;
         } else {
-            if (lateset > 0)
+            if (lateset != 0)
             {
                 horizontalMove = lateset;
             }

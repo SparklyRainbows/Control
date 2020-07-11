@@ -82,8 +82,7 @@ public class MovingPlatform : MonoBehaviour
             Vector3 holder = startPos;
             startPos = endPos;
             endPos = holder;
-            Debug.Log(endPos);
-            Debug.Log(startPos);
+           
         }
 
     }
