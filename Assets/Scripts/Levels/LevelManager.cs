@@ -12,7 +12,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private Canvas C;
 
+    private UI ui;
+
     private void Start() {
+        ui = GameObject.FindGameObjectWithTag("MoveSet").GetComponent<UI>();
         LoadLevel(level);
     }
 
@@ -28,8 +31,8 @@ public class LevelManager : MonoBehaviour
     }
 
     private void LoadLevel(int num) {
+        ui.HideGameOver();
 
-        
         if (currentLevel != null) {
             Destroy(currentLevel);
         }
