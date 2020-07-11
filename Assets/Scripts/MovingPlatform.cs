@@ -17,20 +17,35 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField]
     [Tooltip("How log to wait upon arival")]
     private float WaitTime;
+    public bool is_activated;
+    private bool started;
+    private bool moving;
     #endregion
 
     #region Unity_funcs
     private void Awake()
     {
         startPos = transform.position;
-        StartCoroutine( Move());
+        if (!is_activated)
+        {
+            moving = true;
+            StartCoroutine(Move());
+        }
+        else
+        {
+            moving = false;
+        }
         Debug.Log("stared");
 
     }
     #endregion
 
     #region Movment_funcs
-    private IEnumerator Move()
+    public void activate()
+    {
+        StartCoroutine(Move());
+    }
+    public IEnumerator Move()
     {
         Debug.Log("stared");
         while (true)
@@ -42,6 +57,14 @@ public class MovingPlatform : MonoBehaviour
             {
                 timer += Time.deltaTime;
                 yield return null;
+                while(moving = false)
+                {
+                    yield return null;
+                }
+            }
+            while (moving = false)
+            {
+                yield return null;
             }
 
             while (transform.position != endPos)
@@ -51,6 +74,10 @@ public class MovingPlatform : MonoBehaviour
                 curPos = transform.position;
                 yield return null;
                 lastPos = transform.position;
+                while (moving = false)
+                {
+                    yield return null;
+                }
             }
             Vector3 holder = startPos;
             startPos = endPos;
@@ -66,7 +93,33 @@ public class MovingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            
+
             collision.gameObject.transform.position += new Vector3( curPos.x - lastPos.x,curPos.y - lastPos.y, 0);
         }
     }
+
+    #region setter
+    public void setStarted(bool B)
+    {
+        started = B;
+    }
+
+    public void setMoving(bool B)
+    {
+        moving = B;
+    }
+    #endregion
+
+    #region getter
+    public bool getStarted()
+    {
+        return started;
+    }
+
+    public bool getMoving()
+    {
+        return moving;
+    }
+    #endregion
 }
