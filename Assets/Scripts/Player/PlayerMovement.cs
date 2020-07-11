@@ -8,12 +8,11 @@ public class PlayerMovement : MonoBehaviour {
 
     private float horizontalMove;
     private bool jump;
-    [SerializeField]
     private MovementManager moves;
 
     private void Awake() {
         controller = GetComponent<CharacterController2D>();
-
+        moves = GetComponent<MovementManager>();
     }
 
     private void Update() {

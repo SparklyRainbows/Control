@@ -17,8 +17,8 @@ public class MovementManager : MonoBehaviour
     #endregion
 
     #region Unity_funcs
-    
 
+   
     private void Update()
     {
         TextMeshProUGUI[] Holders =  Movement.GetComponentsInChildren<TextMeshProUGUI>();
