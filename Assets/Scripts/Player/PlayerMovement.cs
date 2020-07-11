@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour {
     private float horizontalMove;
     private bool jump;
     private MovementManager moves;
+    private float lateset;
 
     private void Awake() {
         controller = GetComponent<CharacterController2D>();
@@ -20,13 +21,20 @@ public class PlayerMovement : MonoBehaviour {
 
         if (x_input < 0 && moves.getLeftMove() > 0) {
             horizontalMove = x_input * runSpeed;
+            Debug.Log(horizontalMove);
 
 
         } else if (x_input > 0 && moves.getRightMove() > 0) {
             horizontalMove = x_input * runSpeed;
         } else {
-
-            horizontalMove = 0;
+            if (lateset != 0)
+            {
+                horizontalMove = lateset;
+            }
+            else
+            {
+                horizontalMove = 0;
+            }
         }
         if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D)) {
             moves.LowerRightMove();
@@ -45,5 +53,10 @@ public class PlayerMovement : MonoBehaviour {
     private void FixedUpdate() {
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
         jump = false;
+    }
+
+    public void setHorizontalMove(float speed)
+    {
+        lateset = speed;
     }
 }

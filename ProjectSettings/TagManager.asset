@@ -8,6 +8,8 @@ TagManager:
   - MoveSet
   - Switch
   - Pickup
+  - ConveyorBelt
+  - MovingPlat
   layers:
   - Default
   - TransparentFX
