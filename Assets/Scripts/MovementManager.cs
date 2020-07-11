@@ -29,6 +29,11 @@ public class MovementManager : MonoBehaviour
         Holders[0].text = LeftMove.ToString();
         Holders[1].text = RightMove.ToString();
         Holders[2].text = Jumps.ToString();
+
+        if(LeftMove == 0 && RightMove == 0 && Jumps == 0)
+        {
+            Debug.Log("Game Over");
+        }
     }
 
     #endregion
