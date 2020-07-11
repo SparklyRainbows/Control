@@ -11,6 +11,10 @@ public class PlayerMovement : MonoBehaviour {
     private MovementManager moves;
     private float lateset;
 
+    public float slopeHeight;
+    public bool sliding;
+    public float slopeMovement;
+
     private void Awake() {
         controller = GetComponent<CharacterController2D>();
         moves = GetComponent<MovementManager>();
@@ -18,6 +22,11 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Update() {
         float x_input = Input.GetAxisRaw("Horizontal");
+
+        if (x_input != Mathf.Sign(horizontalMove) && slopeHeight >= 1 && !sliding) {
+            sliding = true;
+            slopeMovement = -Mathf.Sign(horizontalMove);
+        }
 
         if (x_input < 0 && moves.getLeftMove() > 0) {
             if (lateset != 0)
@@ -29,7 +38,6 @@ public class PlayerMovement : MonoBehaviour {
                 horizontalMove = x_input * runSpeed;
                 Debug.Log(horizontalMove);
             }
-
         } else if (x_input > 0 && moves.getRightMove() > 0) {
             if (lateset != 0)
             {
@@ -60,6 +68,15 @@ public class PlayerMovement : MonoBehaviour {
             jump = true;
             moves.LowerJumps();
 
+            ResetSlide();
+        }
+
+        if (slopeHeight <= 0) {
+            ResetSlide();
+        }
+        if (sliding) {
+            horizontalMove += runSpeed * slopeMovement / 3;
+            slopeHeight -= Time.deltaTime;
         }
     }
 
@@ -71,5 +88,16 @@ public class PlayerMovement : MonoBehaviour {
     public void setHorizontalMove(float speed)
     {
         lateset = speed;
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Slope")) {
+            slopeHeight = collision.gameObject.GetComponent<Slope>().GetHeight();
+        }
+    }
+
+    private void ResetSlide() {
+        sliding = false;
+        slopeHeight = 0;
     }
 }
