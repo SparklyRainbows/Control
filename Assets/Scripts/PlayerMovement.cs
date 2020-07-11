@@ -8,16 +8,45 @@ public class PlayerMovement : MonoBehaviour {
 
     private float horizontalMove;
     private bool jump;
+    [SerializeField]
+    private MovementManager moves;
+    private float Lastmove;
 
     private void Awake() {
         controller = GetComponent<CharacterController2D>();
+        Lastmove = 0;
     }
 
     private void Update() {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        float x_input = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump")) {
+        if (x_input < 0 && moves.getLeftMove() > 0)
+        {
+            horizontalMove = x_input * runSpeed;
+            
+
+        } else if (x_input > 0 && moves.getRightMove() > 0)
+        {
+            horizontalMove = x_input * runSpeed;
+        }
+        else
+        {
+            
+            horizontalMove = 0;
+        }
+        if(Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D))
+        {
+            moves.LowerRightMove();
+        }
+        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A))
+        {
+            moves.LowerLeftMove();
+        }
+
+            if (Input.GetButtonDown("Jump") && moves.getJumps() > 0) {
             jump = true;
+            moves.LowerJumps();
+
         }
     }
 
