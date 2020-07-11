@@ -67,6 +67,7 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetButtonDown("Jump") && moves.getJumps() > 0) {
             jump = true;
             moves.LowerJumps();
+            Debug.Log("am jumping");
 
             ResetSlide();
         }

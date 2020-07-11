@@ -25,7 +25,7 @@ public class MovingPlatform : MonoBehaviour
     #region Unity_funcs
     private void Awake()
     {
-        startPos = transform.position;
+        startPos = transform.parent.transform.position;
         if (!is_activated)
         {
             moving = true;
@@ -67,9 +67,9 @@ public class MovingPlatform : MonoBehaviour
                 yield return null;
             }
 
-            while (transform.position != endPos)
+            while (transform.parent.transform.position != endPos)
             {
-                transform.position = Vector3.Lerp(transform.position, endPos, timer / speed);
+                transform.parent.transform.position = Vector3.Lerp(transform.parent.transform.position, endPos, timer / speed);
                 timer += Time.deltaTime;
                 curPos = transform.position;
                 yield return null;
@@ -88,13 +88,27 @@ public class MovingPlatform : MonoBehaviour
     }
     #endregion
 
-    private void OnCollisionStay2D(Collision2D collision)
+    //private void OnCollisionStay2D(Collision2D collision)
+    //{
+    //   if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        
+    //       collision.gameObject.transform.position += new Vector3( curPos.x - lastPos.x,curPos.y - lastPos.y, 0);
+    //    }
+    //}
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            
+            collision.transform.parent = this.transform.parent;
+        }
+    }
 
-            collision.gameObject.transform.position += new Vector3( curPos.x - lastPos.x,curPos.y - lastPos.y, 0);
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.transform.parent =null;
         }
     }
 
