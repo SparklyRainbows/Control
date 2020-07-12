@@ -21,6 +21,8 @@ public class MovingPlatform : MonoBehaviour
     private bool started;
     private bool moving;
     private GameObject lastparent;
+
+    private bool is_column;
     #endregion
 
     #region Unity_funcs
@@ -89,20 +91,13 @@ public class MovingPlatform : MonoBehaviour
     }
     #endregion
 
-    //private void OnCollisionStay2D(Collision2D collision)
-    //{
-    //   if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        
-    //       collision.gameObject.transform.position += new Vector3( curPos.x - lastPos.x,curPos.y - lastPos.y, 0);
-    //    }
-    //}
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             
-            collision.transform.parent = this.transform.parent;
+            collision.transform.parent = this.transform;
         }
     }
 
@@ -110,7 +105,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.transform.parent =this.transform.parent.transform.parent.transform.parent.transform.parent;
+            collision.transform.parent =this.transform.parent.transform.parent.transform.parent;
         }
     }
 
