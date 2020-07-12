@@ -34,6 +34,10 @@ public class MovementManager : MonoBehaviour
         {
             ui.ShowGameOver();
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Gain(100, 100, 100);
+        }
     }
 
     #endregion
