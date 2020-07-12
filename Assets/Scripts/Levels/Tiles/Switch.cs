@@ -22,6 +22,8 @@ public class Switch : MonoBehaviour
     }
 
     public void Toggle() {
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().Play("Switch");
+
         isOn = !isOn;
 
         index = index == 0 ? 1 : 0;

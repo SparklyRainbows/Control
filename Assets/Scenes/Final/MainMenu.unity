@@ -322,8 +322,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d58c24d839cd04c8bbeb179ec0a233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicLoop: {fileID: 8300000, guid: e7fb01ee01644da4ea23f1fde3eef279, type: 3}
-  sounds: []
+  musicLoop: {fileID: 8300000, guid: 8d9b7b215442d914794680c83c7b0da2, type: 3}
+  sounds:
+  - name: Spring
+    clip: {fileID: 8300000, guid: 4fe3696d1fc966740934e1e96e74c2f2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: 29b6365238afcc14baf3429b2ff50b96, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Land
+    clip: {fileID: 8300000, guid: 242a9c5de2a1fee4584ab36c354336ad, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Release
+    clip: {fileID: 8300000, guid: 38732a8cecdaab74abb5032367cd35a4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Click
+    clip: {fileID: 8300000, guid: 9c2ccc2f69ffd504aacc4a33a6ebb78e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Move
+    clip: {fileID: 8300000, guid: 26a7bffa62eb2ad488457de521d88958, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Lose
+    clip: {fileID: 8300000, guid: 1b8bf7d7bb2b7bb48a702187d750ffdd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Switch
+    clip: {fileID: 8300000, guid: 33e9127783e875045aa9f25ae426766d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Exit
+    clip: {fileID: 8300000, guid: 6ddedc6627c3a824d992671a52096590, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Trapdoor
+    clip: {fileID: 8300000, guid: 213eefcc520013046b4608f068393979, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!82 &183760707
 AudioSource:
   m_ObjectHideFlags: 0
@@ -334,7 +394,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 469ca863bb273034dbef7ee87d3b6ec1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b1474678baffb1342963d2cf9b05f55d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

@@ -26,6 +26,8 @@ public class Spring : MonoBehaviour
             animator.SetTrigger("Bounce");
             canBounce = false;
 
+            GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().Play("Spring");
+
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
             Vector2 vel = rb.velocity;
             vel.y = bounceAmount;
