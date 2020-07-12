@@ -8,7 +8,8 @@ public class Slope : MonoBehaviour
     public int height;
 
     private void OnValidate() {
-        GetComponent<SpriteRenderer>().flipX = !facingRight;
+        Quaternion n = new Quaternion(0, facingRight ? 0 : 180, 0, 0);
+        transform.rotation = n;
     }
 
     public int GetHeight() {
