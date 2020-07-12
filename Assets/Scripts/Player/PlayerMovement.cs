@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour {
         float x_input = Input.GetAxisRaw("Horizontal");
 
         if (x_input != Mathf.Sign(horizontalMove) && slopeHeight >= 1 && !sliding) {
+            SetSlopeHeight();
             sliding = true;
             slopeMovement = -Mathf.Sign(horizontalMove);
         }
@@ -38,9 +39,7 @@ public class PlayerMovement : MonoBehaviour {
             else
             {
                 horizontalMove = x_input * runSpeed;
-                Debug.Log(horizontalMove);
             }
-            print("left");
             anim.SetBool("moving", true);
         } else if (x_input > 0 && moves.getRightMove() > 0) {
             if (lateset != 0)
@@ -51,7 +50,6 @@ public class PlayerMovement : MonoBehaviour {
             {
                 horizontalMove = x_input * runSpeed;
             }
-            print("right");
             anim.SetBool("moving", true);
         } else {
             if (lateset != 0)
@@ -62,7 +60,6 @@ public class PlayerMovement : MonoBehaviour {
             {
                 horizontalMove = 0;
             }
-            print("not moving");
             anim.SetBool("moving", false);
         }
         if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D)) {
@@ -75,7 +72,6 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetButtonDown("Jump") && moves.getJumps() > 0) {
             jump = true;
             moves.LowerJumps();
-            Debug.Log("am jumping");
 
             ResetSlide();
         }
@@ -100,7 +96,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     public void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Slope")) {
+        if (collision.gameObject.CompareTag("Slope") && !sliding) {
             slopeHeight = collision.gameObject.GetComponent<Slope>().GetHeight();
         }
     }
@@ -108,5 +104,9 @@ public class PlayerMovement : MonoBehaviour {
     private void ResetSlide() {
         sliding = false;
         slopeHeight = 0;
+    }
+
+    private void SetSlopeHeight() {
+        slopeHeight -= .25f * slopeHeight;
     }
 }
