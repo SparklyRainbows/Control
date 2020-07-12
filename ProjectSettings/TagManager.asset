@@ -12,6 +12,7 @@ TagManager:
   - MovingPlat
   - Slope
   - Fade
+  - AudioManager
   layers:
   - Default
   - TransparentFX
