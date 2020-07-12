@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour {
@@ -51,9 +52,12 @@ public class CharacterController2D : MonoBehaviour {
         for (int i = 0; i < colliders.Length; i++) {
             if (colliders[i].gameObject != gameObject) {
                 m_Grounded = true;
-                if (!wasGrounded)
+                if (!wasGrounded) {
                     OnLandEvent.Invoke();
                     anim.SetBool("grounded", true);
+
+                    StartCoroutine(PlayLand());
+                }
             }
         }
     }
@@ -110,6 +114,12 @@ public class CharacterController2D : MonoBehaviour {
                 // ... flip the player.
                 Flip();
             }
+
+            if (m_Grounded && move != 0) {
+                GetComponent<PlayerMovement>().PlayDust();
+            } else {
+                GetComponent<PlayerMovement>().StopDust();
+            }
         }
         // If the player should jump...
         if (m_Grounded && jump) {
@@ -136,5 +146,12 @@ public class CharacterController2D : MonoBehaviour {
 
     public bool IsGrounded() {
         return m_Grounded;
+    }
+
+    private IEnumerator PlayLand() {
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().Play("Land");
+        GetComponent<PlayerMovement>().PlayLand();
+        yield return new WaitForSeconds(.5f);
+        GetComponent<PlayerMovement>().StopLand();
     }
 }

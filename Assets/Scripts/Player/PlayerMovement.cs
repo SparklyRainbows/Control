@@ -2,6 +2,9 @@
 using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour {
+    public ParticleSystem walkParticles;
+    public ParticleSystem landParticles;
+
     private CharacterController2D controller;
     private Animator anim;
 
@@ -20,6 +23,8 @@ public class PlayerMovement : MonoBehaviour {
         controller = GetComponent<CharacterController2D>();
         moves = GetComponent<MovementManager>();
         anim = GetComponent<Animator>();
+
+        landParticles.Stop();
     }
 
     private void Update() {
@@ -114,5 +119,21 @@ public class PlayerMovement : MonoBehaviour {
 
     private void SetSlopeHeight() {
         slopeHeight -= .25f * slopeHeight;
+    }
+
+    public void PlayDust() {
+        walkParticles.Play();
+    }
+
+    public void StopDust() {
+        walkParticles.Stop();
+    }
+
+    public void PlayLand() {
+        landParticles.Play();
+    }
+
+    public void StopLand() {
+        landParticles.Stop();
     }
 }
