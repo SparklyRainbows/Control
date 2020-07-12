@@ -2520,10 +2520,25 @@ PrefabInstance:
       propertyPath: endPos.x
       value: -5.986
       objectReference: {fileID: 0}
+    - target: {fileID: 4723013580844370946, guid: 385c54a371e9f1d4ab79ecbcc3133971,
+        type: 3}
+      propertyPath: speed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723013580844370946, guid: 385c54a371e9f1d4ab79ecbcc3133971,
+        type: 3}
+      propertyPath: is_activated
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4723013580844370949, guid: 385c54a371e9f1d4ab79ecbcc3133971,
         type: 3}
       propertyPath: m_Name
       value: moving platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 8302699114107098524, guid: 385c54a371e9f1d4ab79ecbcc3133971,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 385c54a371e9f1d4ab79ecbcc3133971, type: 3}
@@ -2614,6 +2629,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: moving platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723013580844370949, guid: 385c54a371e9f1d4ab79ecbcc3133971,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8302699114107098524, guid: 385c54a371e9f1d4ab79ecbcc3133971,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.93
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 385c54a371e9f1d4ab79ecbcc3133971, type: 3}
