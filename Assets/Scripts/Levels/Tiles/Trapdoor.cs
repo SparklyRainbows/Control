@@ -6,7 +6,15 @@ using UnityEngine.Tilemaps;
 public class Trapdoor : MonoBehaviour
 {
     public float delay;
+    public float closeDelay;
+
     private bool opened;
+
+    private Animator animator;
+
+    private void Start() {
+        animator = GetComponent<Animator>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Player") && !opened) {
@@ -17,6 +25,12 @@ public class Trapdoor : MonoBehaviour
     private IEnumerator OpenDoor() {
         opened = true;
         yield return new WaitForSeconds(delay);
-        GetComponent<BoxCollider2D>().enabled = false;
+
+        animator.SetBool("Open", true);
+
+        yield return new WaitForSeconds(closeDelay);
+        animator.SetBool("Open", false);
+
+        opened = false;
     }
 }
