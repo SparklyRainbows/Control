@@ -6,7 +6,6 @@ public class ConveyorBelt : MonoBehaviour
 {
     [SerializeField]
     private float Speed;
-    private int Direction =  1;
     [SerializeField]
     private bool stop;
     [SerializeField]
@@ -17,14 +16,14 @@ public class ConveyorBelt : MonoBehaviour
     private void Start() {
         animator = GetComponent<Animator>();
         animator.SetBool("stopped", stop);
-        animator.SetInteger("direction", Direction);
+        animator.SetInteger("direction", (int)Speed);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && !stop)
         {
-            collision.gameObject.GetComponent<PlayerMovement>().setHorizontalMove(Speed * Direction);
+            collision.gameObject.GetComponent<PlayerMovement>().setHorizontalMove(Speed);
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -37,8 +36,8 @@ public class ConveyorBelt : MonoBehaviour
 
     public void changeDirection()
     {
-        Direction *= -1;
-        animator.SetInteger("direction", Direction);
+        Speed *= -1;
+        animator.SetInteger("direction", (int)Speed);
     }
 
     public bool getStoppable()

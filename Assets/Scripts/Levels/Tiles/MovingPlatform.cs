@@ -5,9 +5,6 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour
 {
     #region Movement_vars
-    private Vector3 startPos;
-    //[SerializeField]
-    private Vector3 endPos;
     private PlayerMovement Player;
     private Vector2 lastPos;
     private Vector2 curPos;
@@ -25,7 +22,8 @@ public class MovingPlatform : MonoBehaviour
     private bool is_column;
     #endregion
 
-    public Transform end;
+    public Transform A;
+    public Transform B;
     private Vector2 startPosition;
     private Vector2 endPosition;
 
@@ -34,12 +32,9 @@ public class MovingPlatform : MonoBehaviour
     #region Unity_funcs
     private void Awake()
     {
-        startPosition = transform.position;
-        endPosition = end.position;
-
-        Debug.Log(startPosition + " " + endPosition);
-
-        startPos = transform.position;
+        startPosition = A.position;
+        endPosition = B.position;
+        
         if (!is_activated)
         {
             moving = true;
@@ -62,7 +57,7 @@ public class MovingPlatform : MonoBehaviour
         while (true) {
             float progress = 0;
 
-            Vector2 targetPos;
+            /*Vector2 targetPos;
             Vector2 originPos;
             if (Vector2.Distance(transform.position, startPosition) > Vector2.Distance(transform.position, endPosition)) {
                 targetPos = startPosition;
@@ -70,12 +65,11 @@ public class MovingPlatform : MonoBehaviour
             } else {
                 targetPos = endPosition;
                 originPos = startPosition;
-            }
-            Debug.Log(endPosition);
+            }*/
 
-            while (Vector2.Distance(transform.position, targetPos) > Vector2.kEpsilon) {
+            while (Vector2.Distance(transform.position, startPosition) > Vector2.kEpsilon) {
                 if (moving) {
-                    Vector2 newPos = Vector3.Lerp(originPos, endPosition, progress);
+                    Vector2 newPos = Vector3.Lerp(endPosition, startPosition, progress);
 
                     if (player != null) {
                         Vector2 playerPos = player.transform.position;
@@ -94,9 +88,9 @@ public class MovingPlatform : MonoBehaviour
 
             progress = 0;
 
-            while (Vector2.Distance(transform.position, originPos) > Vector2.kEpsilon) {
+            while (Vector2.Distance(transform.position, endPosition) > Vector2.kEpsilon) {
                 if (moving) {
-                    Vector2 newPos = Vector3.Lerp(endPosition, originPos, progress);
+                    Vector2 newPos = Vector3.Lerp(startPosition, endPosition, progress);
 
                     if (player != null) {
                         Vector2 playerPos = player.transform.position;

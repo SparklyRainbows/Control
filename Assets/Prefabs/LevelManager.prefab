@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d738f7abdf87e94883c2fd723a72149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
+  level: 9
   animator: {fileID: 0}
   levelPrefabs:
   - {fileID: 90954627456351, guid: 79aa3f5908e2f7845911fd78d5b03bd3, type: 3}
@@ -51,3 +51,8 @@ MonoBehaviour:
   - {fileID: 90954627456351, guid: bb05b9110766247428f688b3fe8a0e57, type: 3}
   - {fileID: 90954627456351, guid: f497814fca52ca346b24cc86dacaf705, type: 3}
   - {fileID: 90954627456351, guid: cfb118861d375bb44a963d89123a8894, type: 3}
+  - {fileID: 90954627456351, guid: debc0098e986f5e49bafd9c3bce46dbc, type: 3}
+  - {fileID: 90954627456351, guid: aa9ff27b58cd811468cf92dfb0b18735, type: 3}
+  - {fileID: 90954627456351, guid: 9e5c95686f25afb46ad0dd1dd7e361f2, type: 3}
+  - {fileID: 90954627456351, guid: dfc1de8b40ad0654a9c4c4ca01ed24dd, type: 3}
+  - {fileID: 90954627456351, guid: d503acd1ffe868b459b0243ee913086c, type: 3}
