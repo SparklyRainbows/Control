@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Update() {
         float x_input = Input.GetAxisRaw("Horizontal");
-
+       
         if (x_input != Mathf.Sign(horizontalMove) && slopeHeight >= 1 && !sliding) {
             SetSlopeHeight();
             sliding = true;
@@ -69,10 +69,11 @@ public class PlayerMovement : MonoBehaviour {
             moves.LowerLeftMove();
         }
 
+        
         if (Input.GetButtonDown("Jump") && moves.getJumps() > 0) {
             jump = true;
             moves.LowerJumps();
-
+            Debug.Log("Am jumping");
             ResetSlide();
         }
 
