@@ -21,8 +21,14 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void LoadNextLevel() {
+    public IEnumerator LoadNextLevel() {
         animator.SetTrigger("fade_out");
+        float timer = 0f;
+        while (timer < 1f)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
         LoadLevel(level + 1);
     }
 
