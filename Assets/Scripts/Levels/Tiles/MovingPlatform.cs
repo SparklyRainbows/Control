@@ -6,7 +6,7 @@ public class MovingPlatform : MonoBehaviour
 {
     #region Movement_vars
     private Vector3 startPos;
-    [SerializeField]
+    //[SerializeField]
     private Vector3 endPos;
     private PlayerMovement Player;
     private Vector2 lastPos;
@@ -25,10 +25,21 @@ public class MovingPlatform : MonoBehaviour
     private bool is_column;
     #endregion
 
+    public Transform end;
+    private Vector2 startPosition;
+    private Vector2 endPosition;
+
+    private GameObject player;
+
     #region Unity_funcs
     private void Awake()
     {
-        startPos = transform.parent.transform.position;
+        startPosition = transform.position;
+        endPosition = end.position;
+
+        Debug.Log(startPosition + " " + endPosition);
+
+        startPos = transform.position;
         if (!is_activated)
         {
             moving = true;
@@ -38,8 +49,6 @@ public class MovingPlatform : MonoBehaviour
         {
             moving = false;
         }
-        Debug.Log("stared");
-
     }
     #endregion
 
@@ -50,7 +59,62 @@ public class MovingPlatform : MonoBehaviour
     }
     public IEnumerator Move()
     {
-        Debug.Log("stared");
+        while (true) {
+            float progress = 0;
+
+            Vector2 targetPos;
+            Vector2 originPos;
+            if (Vector2.Distance(transform.position, startPosition) > Vector2.Distance(transform.position, endPosition)) {
+                targetPos = startPosition;
+                originPos = endPosition;
+            } else {
+                targetPos = endPosition;
+                originPos = startPosition;
+            }
+            Debug.Log(endPosition);
+
+            while (Vector2.Distance(transform.position, targetPos) > Vector2.kEpsilon) {
+                if (moving) {
+                    Vector2 newPos = Vector3.Lerp(originPos, endPosition, progress);
+
+                    if (player != null) {
+                        Vector2 playerPos = player.transform.position;
+                        playerPos += newPos - (Vector2)transform.position;
+                        player.transform.position = playerPos;
+                    }
+
+                    transform.position = newPos;
+
+                    progress += 1f / speed;
+                    yield return null;
+                }
+            }
+
+            yield return new WaitForSeconds(WaitTime);
+
+            progress = 0;
+
+            while (Vector2.Distance(transform.position, originPos) > Vector2.kEpsilon) {
+                if (moving) {
+                    Vector2 newPos = Vector3.Lerp(endPosition, originPos, progress);
+
+                    if (player != null) {
+                        Vector2 playerPos = player.transform.position;
+                        playerPos += newPos - (Vector2)transform.position;
+                        player.transform.position = playerPos;
+                    }
+
+                    transform.position = newPos;
+
+                    progress += 1f / speed;
+                    yield return null;
+                }
+            }
+
+            yield return new WaitForSeconds(WaitTime);
+        }
+
+        /*Debug.Log("stared");
         while (true)
         {
             float timer = 0;
@@ -70,9 +134,9 @@ public class MovingPlatform : MonoBehaviour
                 yield return null;
             }
 
-            while (transform.parent.transform.position != endPos)
+            while (transform.position != endPos)
             {
-                transform.parent.transform.position = Vector3.Lerp(transform.parent.transform.position, endPos, timer / speed);
+                transform.position = Vector3.Lerp(transform.position, endPos, timer / speed);
                 timer += Time.deltaTime;
                 curPos = transform.position;
                 yield return null;
@@ -85,10 +149,12 @@ public class MovingPlatform : MonoBehaviour
             Vector3 holder = startPos;
             startPos = endPos;
             endPos = holder;
+            Debug.Log(endPos);
            
-        }
+        }*/
 
     }
+    
     #endregion
 
     
@@ -96,8 +162,8 @@ public class MovingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            
-            collision.transform.parent = this.transform;
+            player = collision.gameObject;
+            //collision.transform.parent = this.transform;
         }
     }
 
@@ -105,7 +171,8 @@ public class MovingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.transform.parent =this.transform.parent.transform.parent.transform.parent;
+            player = null;
+            //collision.transform.parent =this.transform.parent.transform.parent.transform.parent;
         }
     }
 
