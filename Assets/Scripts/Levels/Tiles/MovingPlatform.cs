@@ -29,6 +29,8 @@ public class MovingPlatform : MonoBehaviour
     private Vector2 startPosition;
     private Vector2 endPosition;
 
+    private GameObject player;
+
     #region Unity_funcs
     private void Awake()
     {
@@ -73,8 +75,16 @@ public class MovingPlatform : MonoBehaviour
 
             while (Vector2.Distance(transform.position, targetPos) > Vector2.kEpsilon) {
                 if (moving) {
-                    transform.position = Vector3.Lerp(originPos, endPosition, progress);
-                    Debug.Log(originPos + " " + endPosition);
+                    Vector2 newPos = Vector3.Lerp(originPos, endPosition, progress);
+
+                    if (player != null) {
+                        Vector2 playerPos = player.transform.position;
+                        playerPos += newPos - (Vector2)transform.position;
+                        player.transform.position = playerPos;
+                    }
+
+                    transform.position = newPos;
+
                     progress += 1f / speed;
                     yield return null;
                 }
@@ -86,7 +96,16 @@ public class MovingPlatform : MonoBehaviour
 
             while (Vector2.Distance(transform.position, originPos) > Vector2.kEpsilon) {
                 if (moving) {
-                    transform.position = Vector3.Lerp(endPosition, originPos, progress);
+                    Vector2 newPos = Vector3.Lerp(endPosition, originPos, progress);
+
+                    if (player != null) {
+                        Vector2 playerPos = player.transform.position;
+                        playerPos += newPos - (Vector2)transform.position;
+                        player.transform.position = playerPos;
+                    }
+
+                    transform.position = newPos;
+
                     progress += 1f / speed;
                     yield return null;
                 }
@@ -139,12 +158,12 @@ public class MovingPlatform : MonoBehaviour
     #endregion
 
     
-    /*private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            
-            collision.transform.parent = this.transform;
+            player = collision.gameObject;
+            //collision.transform.parent = this.transform;
         }
     }
 
@@ -152,9 +171,10 @@ public class MovingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.transform.parent =this.transform.parent.transform.parent.transform.parent;
+            player = null;
+            //collision.transform.parent =this.transform.parent.transform.parent.transform.parent;
         }
-    }*/
+    }
 
     #region setter
     public void setStarted(bool B)
