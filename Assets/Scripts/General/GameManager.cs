@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject options;
+
     public static GameManager instance = null;
     #region Unity_funcs
     private void Awake()
@@ -42,4 +44,9 @@ public class GameManager : MonoBehaviour
     #endif
     }
     #endregion
+
+
+    public void ToggleOptions() {
+        options.SetActive(!options.activeSelf);
+    }
 }
