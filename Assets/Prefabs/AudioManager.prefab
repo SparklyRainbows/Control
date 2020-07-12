@@ -60,7 +60,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Land
     clip: {fileID: 8300000, guid: 242a9c5de2a1fee4584ab36c354336ad, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -103,6 +103,12 @@ MonoBehaviour:
   - name: Trapdoor
     clip: {fileID: 8300000, guid: 213eefcc520013046b4608f068393979, type: 3}
     volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Pickup
+    clip: {fileID: 8300000, guid: 946a949a6a674e540a8e8555e6f54a5c, type: 3}
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
