@@ -1901,17 +1901,17 @@ PrefabInstance:
     - target: {fileID: 5940584607331152376, guid: 13bf64859ec6ea34d9d03682867dbc9b,
         type: 3}
       propertyPath: LeftMove
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5940584607331152376, guid: 13bf64859ec6ea34d9d03682867dbc9b,
         type: 3}
       propertyPath: RightMove
-      value: 20
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5940584607331152376, guid: 13bf64859ec6ea34d9d03682867dbc9b,
         type: 3}
       propertyPath: Jumps
-      value: 20
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13bf64859ec6ea34d9d03682867dbc9b, type: 3}

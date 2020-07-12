@@ -879,7 +879,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 6
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1536,7 +1536,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2189,14 +2189,13 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: be90c7304b8cde54a9752e282979dd1b, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: -3627264120405484348, guid: eec727d3411362347a5c7cb414906cc4,
-      type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -2426843357703420916, guid: eec727d3411362347a5c7cb414906cc4,
       type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 136
     m_Data: {fileID: 6007627129536956325, guid: eec727d3411362347a5c7cb414906cc4,
       type: 3}
@@ -2206,8 +2205,9 @@ Tilemap:
   - m_RefCount: 3
     m_Data: {fileID: -7486092956772349302, guid: eec727d3411362347a5c7cb414906cc4,
       type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -3627264120405484348, guid: eec727d3411362347a5c7cb414906cc4,
+      type: 3}
   - m_RefCount: 12
     m_Data: {fileID: -7775419718026629507, guid: eec727d3411362347a5c7cb414906cc4,
       type: 3}
@@ -2407,17 +2407,17 @@ PrefabInstance:
     - target: {fileID: 5940584607331152376, guid: 13bf64859ec6ea34d9d03682867dbc9b,
         type: 3}
       propertyPath: LeftMove
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5940584607331152376, guid: 13bf64859ec6ea34d9d03682867dbc9b,
         type: 3}
       propertyPath: RightMove
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5940584607331152376, guid: 13bf64859ec6ea34d9d03682867dbc9b,
         type: 3}
       propertyPath: Jumps
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13bf64859ec6ea34d9d03682867dbc9b, type: 3}
