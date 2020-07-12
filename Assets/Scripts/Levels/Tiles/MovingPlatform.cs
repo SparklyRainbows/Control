@@ -22,6 +22,8 @@ public class MovingPlatform : MonoBehaviour
     private bool is_column;
     #endregion
 
+    public bool oneway;
+
     public Transform A;
     public Transform B;
     private Vector2 startPosition;
@@ -80,6 +82,13 @@ public class MovingPlatform : MonoBehaviour
                     transform.position = newPos;
 
                     progress += 1f / speed;
+                    
+                }
+                yield return null;
+            }
+
+            if (oneway) {
+                while (true) {
                     yield return null;
                 }
             }
@@ -101,8 +110,9 @@ public class MovingPlatform : MonoBehaviour
                     transform.position = newPos;
 
                     progress += 1f / speed;
-                    yield return null;
+                    
                 }
+                yield return null;
             }
 
             yield return new WaitForSeconds(WaitTime);
