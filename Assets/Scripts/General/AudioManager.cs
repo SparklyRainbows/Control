@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine.Audio;
 using UnityEngine;
+using System.Collections;
 
 [System.Serializable]
 public struct Sound {
@@ -90,6 +91,11 @@ public struct Sound {
 
 
 public class AudioManager : MonoBehaviour {
+    private bool sfxOff;
+    
+    public AudioClip musicLoop;
+    private AudioSource source;
+
     #region Variables
     [SerializeField]
     [Tooltip("The list of sounds to be played")]
@@ -110,10 +116,19 @@ public class AudioManager : MonoBehaviour {
             sounds[i].Source.loop = s.Loop;
         }
     }
+
+    private void Start() {
+        source = GetComponent<AudioSource>();
+        StartCoroutine(PlayMusic());
+    }
     #endregion
 
     #region Play Sounds
     public void Play(string name) {
+        if (sfxOff) {
+            return;
+        }
+
         Sound s = Array.Find(sounds, sounds => sounds.Name == name);
 
         if (s.Source == null) {
@@ -125,4 +140,19 @@ public class AudioManager : MonoBehaviour {
     }
     #endregion
 
+    public void ToggleMusic() {
+        source.volume = source.volume == 0 ? 1 : 0;
+    }
+
+    public void ToggleSfx() {
+        sfxOff = !sfxOff;
+    }
+
+    private IEnumerator PlayMusic() {
+        source.Play();
+        yield return new WaitWhile(() => source.isPlaying);
+        source.clip = musicLoop;
+        source.Play();
+        source.loop = true;
+    }
 }

@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour
         }
         LoadLevel(level + 1);
     }
-
+    
     private void LoadLevel(int num) {
         GameObject.FindGameObjectWithTag("MoveSet").GetComponent<UI>().HideGameOver();
 
