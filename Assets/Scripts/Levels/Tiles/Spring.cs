@@ -6,7 +6,7 @@ public class Spring : MonoBehaviour
 {
     public float bounceAmount;
 
-    private float cd = .4f;
+    private float cd = .1f;
     private bool canBounce = true;
 
     private Animator animator;
