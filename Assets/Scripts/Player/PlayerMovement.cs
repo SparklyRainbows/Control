@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour {
     private CharacterController2D controller;
+    private Animator anim;
 
     public float runSpeed = 40f;
 
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour {
     private void Awake() {
         controller = GetComponent<CharacterController2D>();
         moves = GetComponent<MovementManager>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update() {
@@ -39,6 +41,8 @@ public class PlayerMovement : MonoBehaviour {
                 horizontalMove = x_input * runSpeed;
                 Debug.Log(horizontalMove);
             }
+            print("left");
+            anim.SetBool("moving", true);
         } else if (x_input > 0 && moves.getRightMove() > 0) {
             if (lateset != 0)
             {
@@ -48,6 +52,8 @@ public class PlayerMovement : MonoBehaviour {
             {
                 horizontalMove = x_input * runSpeed;
             }
+            print("right");
+            anim.SetBool("moving", true);
         } else {
             if (lateset != 0)
             {
@@ -57,6 +63,8 @@ public class PlayerMovement : MonoBehaviour {
             {
                 horizontalMove = 0;
             }
+            print("not moving");
+            anim.SetBool("moving", false);
         }
         if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D)) {
             moves.LowerRightMove();

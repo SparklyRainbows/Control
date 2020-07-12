@@ -5,6 +5,33 @@ TextureImporter:
   - first:
       213: -8346221625239639003
     second: robot-tileset_0
+  - first:
+      213: -8873879565818192796
+    second: robot-tileset_0
+  - first:
+      213: 8584882924891306263
+    second: robot-tileset_1
+  - first:
+      213: -256789850376254028
+    second: robot-tileset_2
+  - first:
+      213: -5311702044152624016
+    second: robot-tileset_3
+  - first:
+      213: 5136625357812413095
+    second: robot-tileset_4
+  - first:
+      213: 1531342131376885335
+    second: robot-tileset_5
+  - first:
+      213: -5906736740139248440
+    second: robot-tileset_6
+  - first:
+      213: -505781965955253944
+    second: robot-tileset_7
+  - first:
+      213: 2876963258077008254
+    second: robot-tileset_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -104,8 +131,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52c68eae6a34c2c80800000000000000
-      internalID: -8346221625239639003
+      spriteID: 46c1fcbfc85a9d480800000000000000
+      internalID: -8873879565818192796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot-tileset_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e71d78527d60de720800000000000000
+      internalID: 2876963258077008254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot-tileset_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bdc56addf2bf6cf0800000000000000
+      internalID: -256789850376254028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot-tileset_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c0199222b0946b0800000000000000
+      internalID: -5311702044152624016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot-tileset_4
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a23ca44c85f84740800000000000000
+      internalID: 5136625357812413095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot-tileset_5
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75e0f4a1e8b604510800000000000000
+      internalID: 1531342131376885335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot-tileset_6
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c45046ea3e070ea0800000000000000
+      internalID: -5906736740139248440
       vertices: []
       indices: 
       edges: []
