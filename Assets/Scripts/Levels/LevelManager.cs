@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    public bool levelEnded;
+
     public int level;
     public Animator animator;
     public List<GameObject> levelPrefabs;
     private GameObject currentLevel;
-    
 
     private void Start() {
         LoadLevel(level);
@@ -22,6 +23,8 @@ public class LevelManager : MonoBehaviour
     }
 
     public IEnumerator LoadNextLevel() {
+        levelEnded = true;
+
         animator.SetTrigger("fade_out");
         float timer = 0f;
         while (timer < 1f)
@@ -38,7 +41,7 @@ public class LevelManager : MonoBehaviour
         if (currentLevel != null) {
             Destroy(currentLevel);
         }
-
+        
         level = num;
 
         if (num >= levelPrefabs.Count) {
@@ -47,5 +50,7 @@ public class LevelManager : MonoBehaviour
         }
 
         currentLevel = Instantiate(levelPrefabs[level]);
+
+        levelEnded = false;
     }
 }

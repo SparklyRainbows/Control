@@ -30,8 +30,9 @@ public class MovementManager : MonoBehaviour
     {
         ui.SetText(LeftMove, Jumps, RightMove);
 
-        if(LeftMove <= 0 && RightMove <= 0 && Jumps <= 0)
+        if(LeftMove <= 0 && RightMove <= 0 && Jumps <= 0 && !GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().levelEnded)
         {
+            GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().Play("Lose");
             ui.ShowGameOver();
         }
 
