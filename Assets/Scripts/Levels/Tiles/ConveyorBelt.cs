@@ -17,6 +17,7 @@ public class ConveyorBelt : MonoBehaviour
     private void Start() {
         animator = GetComponent<Animator>();
         animator.SetBool("stopped", stop);
+        animator.SetInteger("direction", Direction);
     }
 
     private void OnCollisionStay2D(Collision2D collision)

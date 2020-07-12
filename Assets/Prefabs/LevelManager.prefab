@@ -44,9 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  animator: {fileID: 0}
   levelPrefabs:
-  - {fileID: 90954627456351, guid: b49c91964091c044c814ef771075acc9, type: 3}
-  - {fileID: 90954627456351, guid: 6297df4c81dfee5478a42388d6952be4, type: 3}
-  - {fileID: 90954627456351, guid: cbb37f318ff05584d959e4b8b5499e44, type: 3}
-  - {fileID: 90954627456351, guid: 624c28753ffef0044b08b35b00bfec1c, type: 3}
-  - {fileID: 90954627456351, guid: 8fa43b86215458f4f975c6d59b1172e0, type: 3}
+  - {fileID: 90954627456351, guid: 79aa3f5908e2f7845911fd78d5b03bd3, type: 3}
+  - {fileID: 90954627456351, guid: 5650cd143f0cb094a8e9e7a7422b6329, type: 3}
+  - {fileID: 90954627456351, guid: bb05b9110766247428f688b3fe8a0e57, type: 3}
+  - {fileID: 90954627456351, guid: f497814fca52ca346b24cc86dacaf705, type: 3}
+  - {fileID: 90954627456351, guid: cfb118861d375bb44a963d89123a8894, type: 3}
