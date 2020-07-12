@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final/Levels.unity
     guid: 630c59e7f9b03714f94d132c5d2d6e6c
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Final/YouWin.unity
+    guid: d4930720bbdaf514f8fff3f0b152ea47
   m_configObjects: {}

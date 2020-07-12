@@ -7,8 +7,13 @@ public class Spring : MonoBehaviour
     public float bounceAmount;
 
     private float cd = .8f;
-
     private bool canBounce = true;
+
+    private Animator animator;
+
+    private void Start() {
+        animator = GetComponent<Animator>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
@@ -18,6 +23,7 @@ public class Spring : MonoBehaviour
 
     private IEnumerator Bounce(GameObject player) {
         if (canBounce && Above(player)) {
+            animator.SetTrigger("Bounce");
             canBounce = false;
 
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
