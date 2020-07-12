@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2075733015806809453}
   - component: {fileID: 2075733015806809234}
-  - component: {fileID: 2075733015806809235}
   - component: {fileID: 2075733015806809232}
+  - component: {fileID: 9099767812780942343}
   m_Layer: 0
   m_Name: ControlPickup
   m_TagString: Pickup
@@ -72,7 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e8f7165d4e70abf41912d733afc942fd, type: 3}
+  m_Sprite: {fileID: 2112416318531651300, guid: 5173f1338212c56419e5231c945657bb,
+    type: 3}
   m_Color: {r: 0.3980064, g: 0.8113208, b: 0.7617281, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -83,7 +84,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2075733015806809235
+--- !u!114 &2075733015806809232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075733015806809452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2eaa03d608de9c42841878cc15d0cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickup: 2
+  sprites:
+  - {fileID: -8673884932073368119, guid: 5173f1338212c56419e5231c945657bb, type: 3}
+  - {fileID: 6978202091725373337, guid: 5173f1338212c56419e5231c945657bb, type: 3}
+  - {fileID: 2112416318531651300, guid: 5173f1338212c56419e5231c945657bb, type: 3}
+--- !u!61 &9099767812780942343
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,27 +118,12 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0123712, y: 1}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.75, y: 0.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0123712, y: 1}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2075733015806809232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075733015806809452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2eaa03d608de9c42841878cc15d0cb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  left: 100
-  right: 100
-  jump: 100

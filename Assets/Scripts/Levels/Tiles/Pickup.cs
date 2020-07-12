@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    public int left;
-    public int right;
-    public int jump;
+    [SerializeField] private Control pickup;
+
+    public Sprite[] sprites;
+
+    private void OnValidate() {
+        GetComponent<SpriteRenderer>().sprite = sprites[(int)pickup];
+    }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {
@@ -15,7 +19,27 @@ public class Pickup : MonoBehaviour
     }
 
     private void Collect(GameObject player) {
-        player.GetComponent<MovementManager>().Gain(left, right, jump);
+        switch (pickup) {
+            case Control.LEFT:
+                player.GetComponent<MovementManager>().Gain(1, 0, 0);
+                break;
+            case Control.RIGHT:
+                player.GetComponent<MovementManager>().Gain(0, 1, 0);
+                break;
+            case Control.JUMP:
+                player.GetComponent<MovementManager>().Gain(0, 0, 1);
+                break;
+        }
+        
         Destroy(gameObject);
     }
+
+    [System.Serializable]
+    private enum Control {
+        LEFT,
+        RIGHT,
+        JUMP
+    }
 }
+
+
