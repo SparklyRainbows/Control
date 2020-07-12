@@ -97,9 +97,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 5663061954668274717, guid: fb49597ef7711a040a2e1d0530ff66d4, type: 3}
-  - {fileID: 6007627129536956325, guid: fb49597ef7711a040a2e1d0530ff66d4, type: 3}
+  - {fileID: 3557375465273913928, guid: 9c85dfeb723df074b92762d6bcd620ee, type: 3}
+  - {fileID: 5865795378076517997, guid: 9c85dfeb723df074b92762d6bcd620ee, type: 3}
+  - {fileID: -7813466697204199042, guid: 9c85dfeb723df074b92762d6bcd620ee, type: 3}
+  - {fileID: -7615166660246568152, guid: 9c85dfeb723df074b92762d6bcd620ee, type: 3}
+  - {fileID: -634362087105573337, guid: 9c85dfeb723df074b92762d6bcd620ee, type: 3}
+  - {fileID: 3784962250849913513, guid: 9c85dfeb723df074b92762d6bcd620ee, type: 3}
+  - {fileID: -3688933170821740835, guid: 9c85dfeb723df074b92762d6bcd620ee, type: 3}
+  - {fileID: 5777497525372350411, guid: 9c85dfeb723df074b92762d6bcd620ee, type: 3}
+  - {fileID: 6892552828694408888, guid: 9c85dfeb723df074b92762d6bcd620ee, type: 3}
+  - {fileID: -8114136433105222087, guid: 9c85dfeb723df074b92762d6bcd620ee, type: 3}
+  - {fileID: -2534863278362011146, guid: 9c85dfeb723df074b92762d6bcd620ee, type: 3}
+  - {fileID: -4326626755469111502, guid: 9c85dfeb723df074b92762d6bcd620ee, type: 3}
   Devices: []
+  color: 0
 --- !u!61 &2875895337263483997
 BoxCollider2D:
   m_ObjectHideFlags: 0

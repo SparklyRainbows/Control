@@ -11,16 +11,21 @@ public class Switch : MonoBehaviour
 
     private SpriteRenderer renderer;
     private bool isOn;
+    [SerializeField]
+    [Tooltip("0:red 1:green 2:purple 3:blue 4:yellow 5:orange")]
+    private int color = 0;
 
     private void Start() {
-        renderer = GetComponent<SpriteRenderer>();
+        renderer = this.gameObject.GetComponent<SpriteRenderer>();
+        renderer.sprite = sprites[color * 2];
+        
     }
 
     public void Toggle() {
         isOn = !isOn;
 
         index = index == 0 ? 1 : 0;
-        renderer.sprite = sprites[index];
+        renderer.sprite = sprites[color *2  + index];
 
         foreach (GameObject Device in Devices)
         {
