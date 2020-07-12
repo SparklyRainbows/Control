@@ -6,7 +6,7 @@ public class MovingPlatform : MonoBehaviour
 {
     #region Movement_vars
     private Vector3 startPos;
-    [SerializeField]
+    //[SerializeField]
     private Vector3 endPos;
     private PlayerMovement Player;
     private Vector2 lastPos;
@@ -25,9 +25,18 @@ public class MovingPlatform : MonoBehaviour
     private bool is_column;
     #endregion
 
+    public Transform end;
+    private Vector2 startPosition;
+    private Vector2 endPosition;
+
     #region Unity_funcs
     private void Awake()
     {
+        startPosition = transform.position;
+        endPosition = end.position;
+
+        Debug.Log(startPosition + " " + endPosition);
+
         startPos = transform.position;
         if (!is_activated)
         {
@@ -38,8 +47,6 @@ public class MovingPlatform : MonoBehaviour
         {
             moving = false;
         }
-        Debug.Log("stared");
-
     }
     #endregion
 
@@ -50,7 +57,45 @@ public class MovingPlatform : MonoBehaviour
     }
     public IEnumerator Move()
     {
-        Debug.Log("stared");
+        while (true) {
+            float progress = 0;
+
+            Vector2 targetPos;
+            Vector2 originPos;
+            if (Vector2.Distance(transform.position, startPosition) > Vector2.Distance(transform.position, endPosition)) {
+                targetPos = startPosition;
+                originPos = endPosition;
+            } else {
+                targetPos = endPosition;
+                originPos = startPosition;
+            }
+            Debug.Log(endPosition);
+
+            while (Vector2.Distance(transform.position, targetPos) > Vector2.kEpsilon) {
+                if (moving) {
+                    transform.position = Vector3.Lerp(originPos, endPosition, progress);
+                    Debug.Log(originPos + " " + endPosition);
+                    progress += 1f / speed;
+                    yield return null;
+                }
+            }
+
+            yield return new WaitForSeconds(WaitTime);
+
+            progress = 0;
+
+            while (Vector2.Distance(transform.position, originPos) > Vector2.kEpsilon) {
+                if (moving) {
+                    transform.position = Vector3.Lerp(endPosition, originPos, progress);
+                    progress += 1f / speed;
+                    yield return null;
+                }
+            }
+
+            yield return new WaitForSeconds(WaitTime);
+        }
+
+        /*Debug.Log("stared");
         while (true)
         {
             float timer = 0;
@@ -87,13 +132,14 @@ public class MovingPlatform : MonoBehaviour
             endPos = holder;
             Debug.Log(endPos);
            
-        }
+        }*/
 
     }
+    
     #endregion
 
     
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -108,7 +154,7 @@ public class MovingPlatform : MonoBehaviour
         {
             collision.transform.parent =this.transform.parent.transform.parent.transform.parent;
         }
-    }
+    }*/
 
     #region setter
     public void setStarted(bool B)
