@@ -28,7 +28,7 @@ public class MovingPlatform : MonoBehaviour
     #region Unity_funcs
     private void Awake()
     {
-        startPos = transform.parent.transform.position;
+        startPos = transform.position;
         if (!is_activated)
         {
             moving = true;
@@ -70,9 +70,9 @@ public class MovingPlatform : MonoBehaviour
                 yield return null;
             }
 
-            while (transform.parent.transform.position != endPos)
+            while (transform.position != endPos)
             {
-                transform.parent.transform.position = Vector3.Lerp(transform.parent.transform.position, endPos, timer / speed);
+                transform.position = Vector3.Lerp(transform.position, endPos, timer / speed);
                 timer += Time.deltaTime;
                 curPos = transform.position;
                 yield return null;
@@ -85,6 +85,7 @@ public class MovingPlatform : MonoBehaviour
             Vector3 holder = startPos;
             startPos = endPos;
             endPos = holder;
+            Debug.Log(endPos);
            
         }
 
