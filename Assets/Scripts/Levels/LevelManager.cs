@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
 
     private void Start() {
         ui = GameObject.FindGameObjectWithTag("MoveSet").GetComponent<UI>();
+        print(ui);
         LoadLevel(level);
     }
 
