@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour {
         float x_input = Input.GetAxisRaw("Horizontal");
 
         if (x_input != Mathf.Sign(horizontalMove) && slopeHeight >= 1 && !sliding) {
+            SetSlopeHeight();
             sliding = true;
             slopeMovement = -Mathf.Sign(horizontalMove);
         }
@@ -100,5 +101,14 @@ public class PlayerMovement : MonoBehaviour {
     private void ResetSlide() {
         sliding = false;
         slopeHeight = 0;
+    }
+
+    private void SetSlopeHeight() {
+        if (slopeHeight <= 1) {
+            slopeHeight -= .3f;
+        } else {
+            slopeHeight *= 2;
+            Debug.Log(slopeHeight);
+        }
     }
 }
