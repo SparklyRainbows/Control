@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d738f7abdf87e94883c2fd723a72149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
+  level: 7
   animator: {fileID: 0}
   levelPrefabs:
   - {fileID: 90954627456351, guid: 79aa3f5908e2f7845911fd78d5b03bd3, type: 3}
@@ -56,3 +56,9 @@ MonoBehaviour:
   - {fileID: 90954627456351, guid: 9e5c95686f25afb46ad0dd1dd7e361f2, type: 3}
   - {fileID: 90954627456351, guid: dfc1de8b40ad0654a9c4c4ca01ed24dd, type: 3}
   - {fileID: 90954627456351, guid: d503acd1ffe868b459b0243ee913086c, type: 3}
+  - {fileID: 90954627456351, guid: e9a054db2b640e54893a6c90007d2ba8, type: 3}
+  - {fileID: 90954627456351, guid: 99615b02a9e893c40944021d021ae39d, type: 3}
+  - {fileID: 90954627456351, guid: a994667e161a2e647a5cca7bb4799ace, type: 3}
+  - {fileID: 90954627456351, guid: 065ba947d291bce4393a8f483b919c0f, type: 3}
+  - {fileID: 90954627456351, guid: ebff33f5c71afc64f974300f7d528677, type: 3}
+  - {fileID: 90954627456351, guid: b708bd3bf9fef074fb30586f983f239b, type: 3}
