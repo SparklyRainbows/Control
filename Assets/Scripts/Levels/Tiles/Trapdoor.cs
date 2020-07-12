@@ -26,6 +26,7 @@ public class Trapdoor : MonoBehaviour
         opened = true;
         yield return new WaitForSeconds(delay);
 
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().Play("Trapdoor");
         animator.SetBool("Open", true);
 
         yield return new WaitForSeconds(closeDelay);

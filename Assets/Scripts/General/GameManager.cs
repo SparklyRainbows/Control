@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public GameObject options;
 
     public static GameManager instance = null;
+
+    private AudioManager audio;
     #region Unity_funcs
     private void Awake()
     {
@@ -21,14 +23,20 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
+
+    private void Start() {
+        audio = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+    }
     #endregion
 
     #region Scene
     public void Play() {
+        audio.Play("Click");
         SceneManager.LoadScene("Levels");
     }
 
     public void ToMenu() {
+        audio.Play("Click");
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -47,6 +55,7 @@ public class GameManager : MonoBehaviour
 
 
     public void ToggleOptions() {
+        audio.Play("Click");
         options.SetActive(!options.activeSelf);
     }
 }

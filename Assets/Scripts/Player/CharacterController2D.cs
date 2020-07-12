@@ -118,6 +118,8 @@ public class CharacterController2D : MonoBehaviour {
             m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             anim.SetBool("grounded", false);
             anim.SetTrigger("jump");
+
+            GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().Play("Jump");
         }
     }
 

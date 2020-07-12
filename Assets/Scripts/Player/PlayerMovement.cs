@@ -62,9 +62,11 @@ public class PlayerMovement : MonoBehaviour {
             anim.SetBool("moving", false);
         }
         if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D)) {
+            GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().Play("Release");
             moves.LowerRightMove();
         }
         if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A)) {
+            GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().Play("Release");
             moves.LowerLeftMove();
         }
 

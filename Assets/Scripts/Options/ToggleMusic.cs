@@ -10,6 +10,7 @@ public class ToggleMusic : MonoBehaviour, IPointerClickHandler {
     public Sprite[] images;
 
     public void OnPointerClick(PointerEventData eventData) {
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().Play("Click");
         GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().ToggleMusic();
 
         index = index == 0 ? 1 : 0;
