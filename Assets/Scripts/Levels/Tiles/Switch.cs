@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour
 {
-    public Sprite on;
-    public Sprite off;
+    private int index;
+    public Sprite[] sprites;
+
     public GameObject[] Devices;
 
     private SpriteRenderer renderer;
@@ -17,7 +18,10 @@ public class Switch : MonoBehaviour
 
     public void Toggle() {
         isOn = !isOn;
-        renderer.sprite = isOn ? on : off;
+
+        index = index == 0 ? 1 : 0;
+        renderer.sprite = sprites[index];
+
         foreach (GameObject Device in Devices)
         {
             if (Device.CompareTag("MovingPlat"))
