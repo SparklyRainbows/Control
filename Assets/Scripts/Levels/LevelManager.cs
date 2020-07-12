@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour
     }
 
     private void LoadLevel(int num) {
-        //GameObject.FindGameObjectWithTag("MoveSet").GetComponent<UI>().HideGameOver();
+        GameObject.FindGameObjectWithTag("MoveSet").GetComponent<UI>().HideGameOver();
 
         if (currentLevel != null) {
             Destroy(currentLevel);
