@@ -30,7 +30,9 @@ public class Pickup : MonoBehaviour
                 player.GetComponent<MovementManager>().Gain(0, 0, 1);
                 break;
         }
-        
+
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().Play("Pickup");
+
         Destroy(gameObject);
     }
 
